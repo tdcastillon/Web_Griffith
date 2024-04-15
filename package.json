@@ -27,6 +27,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^41.3.0",
     "body-parser": "^1.20.2",
+    "cookie-session": "^2.1.0",
     "nodemon": "^3.1.0"
   }
 }
