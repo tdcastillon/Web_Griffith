@@ -5,8 +5,7 @@
 
 Welcome to The Geek Den! Follow these steps to set up the project locally on your machine.
 
-1. Clone the repository:
-   git clone https://github.com/your-username/the-geek-den.git
+1. Dowload the .zip
 
 2. Install dependencies:
    npm install
@@ -15,6 +14,8 @@ Welcome to The Geek Den! Follow these steps to set up the project locally on you
    npm start
 
 4. Open your browser and navigate to http://localhost:3000
+
+5. Other option : you can go to the deploy version here : https://web-griffith.onrender.com/
 
 ====================================================
                       Usage
