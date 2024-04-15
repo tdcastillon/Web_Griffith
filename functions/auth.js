@@ -66,13 +66,9 @@ auth.post('/register', async (req, res) => {
 });
 
 auth.get('/logout', (req, res) => {
-    // Remove the session user object
-    req.session.destroy();
-  
-    // Redirect to the home page
-    res.redirect('/');
+    req.session = null; // This will clear the session cookie
+    res.redirect('/'); // Redirect to the home page or wherever you want
 });
-
 
 auth.post('/delete/:id', async (req, res) => {
     try {
