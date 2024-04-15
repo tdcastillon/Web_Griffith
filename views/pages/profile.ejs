@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+<title>The Geek Den</title>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Include the head partial -->
+        <%- include('../partials/head'); %>
+        <!-- Link to the article CSS file -->
+        <link href="/css/article.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <!-- Check if user is not logged in -->
+            <% if (!user) { %>
+                <!-- Include the header partial -->
+                <%- include('../partials/header.ejs'); %>
+            <!-- Check if user is an administrator -->
+            <% } else if (user.isAdministrator) { %>
+                <!-- Include the admin navbar partial -->
+                <%- include('../partials/admin_navbar.ejs'); %>
+            <!-- For connected users who are not administrators -->
+            <% } else { %>
+                <!-- Include the connected navbar partial -->
+                <%- include('../partials/connected_navbar.ejs'); %>
+            <% } %>
+            <!-- Link to the header CSS file -->
+            <link href="/css/header.css" rel="stylesheet" type="text/css">
+        </header>
+        <main>
+            <div class="user-container">
+                <div class="user-informations">
+                    <div class="user-informations-header box">
+                        <!-- Display the user username -->
+                        <h1><%= user.username %></h1>
+                    </div>
+                    <div class="user-informations-content box">
+                        <!-- Display the user email -->
+                        <p> <span style="font-weight: bolder; text-decoration: underline"> Email : </span> <%= user.email %> </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <footer>
+        <!-- Include the footer partial -->
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>

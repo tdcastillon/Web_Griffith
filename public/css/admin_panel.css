@@ -1,0 +1,66 @@
+.admin_panel {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px #716969;
+}
+
+.admin_panel-header {
+    background-color: #716969;
+    color: black;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 2em;
+    text-decoration: underline;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+ 
+}
+
+.admin_panel-selection {
+    padding: 10px;
+}
+
+.admin_panel-selection-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.admin_panel-selection-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #ddd;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.admin_panel-selection-option i {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.admin_panel-selection-option:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.admin_panel-selection-option:hover i {
+    color: #fff;
+}

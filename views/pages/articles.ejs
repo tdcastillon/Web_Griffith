@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Include the head partial -->
+        <%- include('../partials/head'); %>
+        <!-- Link to the home_connected CSS file -->
+        <link href="/css/home_connected.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="home-container">
+        <header>
+            <% if (user === null) { %>
+                <!-- Include the header partial -->
+                <%- include('../partials/header.ejs'); %>
+            <% } else if (user.isAdministrator) { %>
+                <!-- Include the admin navbar partial -->
+                <%- include('../partials/admin_navbar.ejs'); %>
+            <% } else { %>
+                <!-- Include the connected navbar partial -->
+                <%- include('../partials/connected_navbar.ejs'); %>
+            <% } %>
+            <link href="/css/header.css" rel="stylesheet" type="text/css">
+        </header>
+        <main class="home-introduction">
+            <div class="all_articles box">
+                <ul style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+                    <% articles.forEach(function(article) { %>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="<%= article.head_picture %>" alt="article picture" class="header-image" /> 
+                                <h3><%= article.title %></h3>
+                            </div>
+                            <div>
+                                <p>By <span style="font-style: italic"> <%= article.author %> </span></p>
+                            </div>
+                            <div class="card-body">
+                                <p><%= article.subTitle %></p>
+                            </div>
+                            <div class="card-footer">
+                                <a onclick="window.location.href='/article/<%= article.id %>'">Read more</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <!-- Include the footer partial -->
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

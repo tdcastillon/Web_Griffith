@@ -1,0 +1,57 @@
+<!-- Define character set -->
+<meta charset="UTF-8">
+<!-- Set the title of the page -->
+<title> The Geek Den </title>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Include the head partial -->
+        <%- include('../partials/head'); %>
+        <!-- Link to the signin CSS file -->
+        <link href="/css/signin.css" rel="stylesheet" type="text/css">
+        <!-- Add inline CSS to set the background color -->
+        <style>
+            body {
+                background-color: #FBFBFB;
+            }
+        </style>
+    </head>
+    <body class="home-container">
+        <header>
+            <!-- Include the header partial -->
+            <%- include('../partials/header'); %>
+            <!-- Link to the header CSS file -->
+            <link href="/css/header.css" rel="stylesheet" type="text/css">
+        </header>
+        <main class="login-container">
+            <!-- Login form -->
+            <form action="/login" method="POST" class="form-container">
+                <div class="login-form">
+                    <!-- Title for the login section -->
+                    <p style="font-size: 2em; font-weight: bolder"> Login </p>
+                    <!-- Input field for credentials -->
+                    <div class="form-group width">
+                        <label for="credential" class="col-sm-2 col-form-label">Credential</label>
+                        <input type="text" class="form-control fullwidth" id="email" name="credential" required>
+                    </div>
+                    <!-- Input field for password -->
+                    <div class="form-group width">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control fullwidth" id="password" name="password" required>
+                    </div>
+                </div>
+                <!-- Login button -->
+                <div class="login-button">
+                    <button type="submit" class="btn btn-lg btn-block style-btn">Login</button>
+                    <!-- Link to registration page -->
+                    <a href="/signup" style="color: black">Don't have an account? Register here!</a>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <!-- Include the footer partial -->
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

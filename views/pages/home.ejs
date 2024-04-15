@@ -1,0 +1,39 @@
+<!-- Define character set -->
+<meta charset="UTF-8">
+<!-- Set the title of the page -->
+<title> The Geek Den </title>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Include the head partial -->
+        <%- include('../partials/head'); %>
+        <!-- Link to the home CSS file -->
+        <link href="/css/home.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="home-container">
+        <header>
+            <!-- Include the header partial -->
+            <%- include('../partials/header'); %>
+            <!-- Link to the header CSS file -->
+            <link href="/css/header.css" rel="stylesheet" type="text/css">
+        </header>
+        <main class="home-introduction">
+            <!-- Main content section -->
+            <div style="flex: 3; justify-content: center; display: flex; flex-direction: column">
+                <!-- Display the welcome message -->
+                <h1 class="display-4" style="font-weight: bolder">Welcome to The Geek Den!</h1>
+            </div>
+            <!-- Description of the website -->
+            <div class="home-description">
+                <p>
+                    Here you can read about all geek cultures from movies to comics, from DC to Marvel ! Can't find what you're looking for? Just let us know and we'll add it for you!
+                </p>
+            </div>
+        </main>
+        <footer>
+            <!-- Include the footer partial -->
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

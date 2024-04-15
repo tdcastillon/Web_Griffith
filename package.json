@@ -1,0 +1,31 @@
+{
+  "name": "blog_express_web_techno",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
+    "ckeditor": "^4.12.1",
+    "crypto-js": "^4.2.0",
+    "ejs": "^3.1.9",
+    "eslint": "^9.0.0",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.37.2"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^41.3.0",
+    "body-parser": "^1.20.2",
+    "nodemon": "^3.1.0"
+  }
+}

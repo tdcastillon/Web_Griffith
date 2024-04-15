@@ -1,0 +1,86 @@
+.article-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= article.head_picture %>'); */
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    background-color: #bfbdbd;
+    width: 100%;
+}
+
+.article-header h1 {
+    color: black;
+    opacity: 1;
+    position: absolute;
+    margin: 0 20%
+  }
+
+.header-image {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+    opacity: 0.5;
+}
+
+.article-information-box {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.article-body {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.article-body p {
+    line-height: 1.5;
+}
+
+.article-edit-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.edit-button,
+.delete-button {
+    background-color: #716969;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 15px;
+    margin-top: 10px;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    background-color: #BCABAE;
+}

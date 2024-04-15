@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+<title>The Geek Den</title>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Include the head partial -->
+        <%- include('../partials/head'); %>
+        <!-- Link to the article CSS file -->
+        <link href="/css/article.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <!-- Check if user is not logged in -->
+            <% if (!user) { %>
+                <!-- Include the header partial -->
+                <%- include('../partials/header.ejs'); %>
+            <!-- Check if user is an administrator -->
+            <% } else if (user.isAdministrator) { %>
+                <!-- Include the admin navbar partial -->
+                <%- include('../partials/admin_navbar.ejs'); %>
+            <!-- For connected users who are not administrators -->
+            <% } else { %>
+                <!-- Include the connected navbar partial -->
+                <%- include('../partials/connected_navbar.ejs'); %>
+            <% } %>
+            <!-- Link to the header CSS file -->
+            <link href="/css/header.css" rel="stylesheet" type="text/css">
+        </header>
+        <main>
+            <div class="article-container">
+                <div class="article-header box">
+                    <!-- Display the article header image -->
+                    <img src="<%= article.head_picture %>" alt="article picture" class="header-image" />
+                    <!-- Display the article title -->
+                    <h1><%= article.title %></h1>
+                </div>
+                <div class="article-information-box">
+                    <!-- Display the article author -->
+                    <p> By <span style="font-style: italic"> <%= article.author %> </span></p>
+                    <!-- Display the article category -->
+                    <p>Category: <%= article.category %></p>
+                    <!-- Display the article publish date -->
+                    <p>Published on: <%= new Date(article.updatedAt).toLocaleDateString(); %></p>
+                </div>
+                <div class="article-body box">
+                    <!-- Display the article content -->
+                    <%- article.content %>
+                </div>
+                <!-- Check if user is an administrator -->
+                <% if (user && user.isAdministrator) { %>
+                    <div class="article-edit-box">
+                        <!-- Form for editing the article -->
+                        <form action="/article/edit/<%=article.id%>" method="get">
+                            <button type="submit" class="edit-button">Edit</button>
+                        </form>
+                        <!-- Form for deleting the article -->
+                        <form action="/articles/delete/<%=article.id%>" method="post">
+                            <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
+        </main>
+        <footer>
+            <!-- Include the footer partial -->
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

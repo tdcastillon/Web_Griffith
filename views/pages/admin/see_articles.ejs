@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Define character set -->
+        <meta charset="UTF-8">
+        <!-- Set the title of the page -->
+        <title>The Geek Den</title>
+        <!-- Include the head partial -->
+        <%- include('../../partials/head'); %>
+        <!-- Link to the create_article CSS file -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQq7Ml8WsgGqQaGkECmY2HwlWD8+T2vQ9XQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="/css/admin_articles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <!-- Include the admin navbar partial -->
+            <%- include('../../partials/admin_navbar'); %>
+            <!-- Link to the header CSS file -->
+            <link href="/css/header.css" rel="stylesheet" type="text/css">
+        </header>
+        <main>
+            <div class="admin_see_articles-content">
+                <div class="admin_see_articles-header box">
+                    <!-- Display the title for the admin panel -->
+                    <p class="admin_see_articles-title">Articles</p>
+                </div>
+                <div class="admin_see_articles-content box">
+                    <div class="admin_see_articles-selection box">
+                        <p class="admin_see_articles-selection-title">Select an Article</p>
+                        <div class="admin_see_articles-selection-options">
+                            <!-- Loop through the articles array -->
+                            <% articles.forEach(article => { %>
+                                <div class="admin_see_articles-selection-option">
+                                    <!-- Display the article title -->
+                                    <div class="admin_see_articles-card">
+                                        <div class="admin_see_articles-card-header">
+                                            <img src="<%= article.head_picture %>" alt="article picture" class="admin_see_articles-card-image" />
+                                            <h2><%= article.title %></h2>
+                                        </div>
+                                        <div class="admin_see_articles-card-information">
+                                            <!-- Display the article author -->
+                                            <p> <span style="font-weight: bolder; text-decoration: underline"> By : </span> <span style="font-style: italic"> <%= article.author %> </span></p>
+                                            <!-- Display the article category -->
+                                            <p><span style="font-weight: bolder; text-decoration: underline"> Category : </span> <%= article.category %></p>
+                                            <p> <span style="font-weight: bolder; text-decoration: underline"> Subtitle : </span> <%= article.subTitle %> </p>
+                                            <p><span style="font-weight: bolder; text-decoration: underline"> Date : </span> <%= new Date(article.createdAt).toDateString() %> </p>
+                                        </div>
+                                        <div class="admin_see_articles-card-footer">
+                                            <!-- Admin options : Delete & edit -->
+                                            <form action="/articles/delete/<%=article.id%>" method="post" style="margin: 0 25px">
+                                                <button type="submit" class="admin_see_articles-delete-button">Delete</button>
+                                            </form>
+                                            <form action="/article/edit/<%=article.id%>" method="get">
+                                                <button type="submit" class="admin_see_articles-edit-button">Edit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Include the footer partial -->
+            <%- include('../../partials/footer'); %>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Define character set -->
+        <meta charset="UTF-8">
+        <!-- Set the title of the page -->
+        <title>The Geek Den</title>
+        <!-- Include the head partial -->
+        <%- include('../partials/head'); %>
+        <!-- Link to the create_article CSS file -->
+        <link href="/css/create_article.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <!-- Include the admin navbar partial -->
+            <%- include('../partials/admin_navbar'); %>
+            <!-- Link to the header CSS file -->
+            <link href="/css/header.css" rel="stylesheet" type="text/css">
+        </header>
+        <main>
+            <div class="create_article">
+                <div class="create_article-header box">
+                    <!-- Display the title for creating an article -->
+                    <p class="create_article-title">Create an Article</p>
+                </div>
+                <div class="create_article-form box">
+                    <!-- Form for creating an article -->
+                    <form action="/post/" method="POST" novalidate>
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <!-- Input field for the article title -->
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subtitle">Subtitle</label>
+                            <!-- Input field for the article subtitle -->
+                            <input type="text" id="subtitle" name="subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Cover Image</label>
+                            <!-- Input field for the article cover image -->
+                            <input type="text" id="image" name="image" required>
+                        </div>
+                        <div class="form-group" id="_content" style="margin-top: 20px">
+                            <label for="content">Content</label>
+                            <!-- Textarea for the article content -->
+                            <textarea id="content" name="content" required></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="category">Category</label>
+                            <!-- Dropdown for selecting the article category -->
+                            <select id="category" name="category" required>
+                              <option value="1">Video Games</option>
+                              <option value="2">Movies</option>
+                              <option value="3">TV Shows</option>
+                              <option value="4">Comics</option>
+                            </select>
+                        </div>
+                        <div style="width: 100%; text-align: center">
+                            <!-- Button to submit the article creation form -->
+                            <button type="submit" class="btn"> Create the article </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer style="margin-top: 20px; margin-bottom: 20px;">
+            <!-- Include the footer partial -->
+            <%- include('../partials/footer'); %>
+        </footer>
+        <!-- Include the CKEditor library -->
+        <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+        <script>
+            // Initialize CKEditor
+            ClassicEditor
+                .create(document.querySelector('#content'))
+                .then(editor => {
+                    window.editor = editor;
+                    // Add the required attribute to the textarea element after CKEditor initializes
+                    document.querySelector('#content').required = true;
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+    </body>
+</html>

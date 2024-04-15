@@ -1,0 +1,134 @@
+.home-introduction {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 3%;
+}
+
+.box {
+    margin: 10px;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 15%;
+}
+
+/* Button Styles */
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 12px;
+    gap: 8px;
+    height: 45px;
+    width: 150px;
+    border: none;
+    background: #BCABAE;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .lable {
+    line-height: 22px;
+    font-size: 17px;
+    color: #fff;
+    margin-left: 20px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .button .span {
+    border-radius: 50%;
+    background-color: #716969;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+  }
+  
+  .button:hover {
+    background: #716969;
+  }
+  
+  .button:hover .svg-icon {
+    animation: slope 0.8s linear infinite;
+  }
+  
+  @keyframes slope {
+    0% {
+    }
+  
+    50% {
+      transform: rotate(15deg);
+    }
+  
+    100% {
+    }
+}
+
+/* Card Styles */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 25%;
+  margin: 10px;
+
+}
+
+
+.card-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= article.head_picture %>'); */
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  background-color: #bfbdbd;
+}
+
+.header-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.card-header h3 {
+  color: black;
+  opacity: 1;
+  position: absolute;
+}
+
+.card-body {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.card-footer {
+  font-size: 14px;
+  color: #666;
+}
+
+.card-footer:hover {
+  color: #bfbdbd;
+  background-color: #716969;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

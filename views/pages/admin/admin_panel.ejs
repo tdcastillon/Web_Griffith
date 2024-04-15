@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Define character set -->
+        <meta charset="UTF-8">
+        <!-- Set the title of the page -->
+        <title>The Geek Den</title>
+        <!-- Include the head partial -->
+        <%- include('../../partials/head'); %>
+        <!-- Link to the create_article CSS file -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQq7Ml8WsgGqQaGkECmY2HwlWD8+T2vQ9XQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="/css/admin_panel.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <!-- Include the admin navbar partial -->
+            <%- include('../../partials/admin_navbar'); %>
+            <!-- Link to the header CSS file -->
+            <link href="/css/header.css" rel="stylesheet" type="text/css">
+        </header>
+        <main>
+            <div class="admin_panel">
+                <div class="admin_panel-header box">
+                    <!-- Display the title for the admin panel -->
+                    <p class="admin_panel-title">Admin Panel</p>
+                </div>
+                <div class="admin_panel-content box">
+                    <div class="admin_panel-selection box">
+                        <p class="admin_panel-selection-title">Select an Option</p>
+                        <div class="admin_panel-selection-options">
+                            <a href="/admin/see_articles" class="admin_panel-selection-option">
+                                <i class="fas fa-newspaper"></i>
+                                See Articles
+                            </a>
+                            <a href="/admin/see_users" class="admin_panel-selection-option">
+                                <i class="fas fa-users"></i>
+                                See Users
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer style="margin-top: 20px; margin-bottom: 20px;">
+            <!-- Include the footer partial -->
+            <%- include('../../partials/footer'); %>
+        </footer>
+    </body>
+</html>

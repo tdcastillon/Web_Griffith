@@ -1,0 +1,91 @@
+/* Admin Panel Styles */
+.admin_see_articles-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.admin_see_articles-header {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.admin_see_articles-title {
+    margin: 0;
+}
+
+.admin_see_articles-selection {
+    width: 100%;
+}
+
+.admin_see_articles-selection-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.admin_see_articles-selection-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin_see_articles-selection-option {
+    background-color: #ddd;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.admin_see_articles-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.admin_see_articles-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.admin_see_articles-card-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.admin_see_articles-card-information {
+    margin: 0 5%;
+    margin-bottom: 10px;
+}
+
+.admin_see_articles-card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.admin_see_articles-delete-button,
+.admin_see_articles-edit-button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin_see_articles-delete-button:hover,
+.admin_see_articles-edit-button:hover {
+    background-color: #555;
+}
